@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AD_340</string>
+    <string name="greeting">Hello World!</string>
+    <string name="intro">My name is Kristin Jue. I am a former nurse transitioning into tech! Some of fave things are learning about cloud technologies, cybersecurity, and human centered design.</string>
+    <string name="fun_facts">When I am not at my computer you can find me outside checking on the latest progress in my herb garden.</string>
 </resources>
