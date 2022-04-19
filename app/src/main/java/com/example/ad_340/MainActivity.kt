@@ -6,11 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.GridView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +38,14 @@ class MainActivity : AppCompatActivity() {
 
         var customAdapter = CustomAdapter(modelList, this);
 
-        gridView
+        var gridView = findViewById(R.id.gridView) as GridView;
+
+        gridView.adapter = customAdapter;
+
+        var toast = Toast.makeText(this, "Season", Toast.LENGTH_LONG)
+        toast.show();
+
+
     }
 
     class CustomAdapter(
@@ -71,9 +74,11 @@ class MainActivity : AppCompatActivity() {
 
             var tvImageName = view?.findViewById<TextView>(R.id.imageName)
             var imageView = view?.findViewById<ImageView>(R.id.imageView)
-            var tvImageButton = view?.findViewById<ImageButton>(R.id.imageButton)
+            var toastButton = view?.findViewById<Button>(R.id.toastButton)
 
             tvImageName?.text = itemModel[position].name;
+            toastButton?.setOnClickListener(){
+            }
             //imageView?.setImageResource(itemModel[position].image!!)
 
             return view!!;

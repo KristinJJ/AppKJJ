@@ -7,15 +7,18 @@
     <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content">
-        <ImageButton
-            android:id="@+id/imageButton"
+        <Button
+            android:id="@+id/toastButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="toastButton"
+            android:onClick="toastMessage"
+            android:contentDescription="TODO" />
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo" />
         <TextView
             android:id="@+id/imageName"
             android:layout_width="wrap_content"
