@@ -42,10 +42,12 @@ class MainActivity : AppCompatActivity() {
 
         gridView.adapter = customAdapter;
 
-        var toast = Toast.makeText(this, "Season", Toast.LENGTH_LONG)
-        toast.show();
+        var loginButton: Button = findViewById(R.id.loginButton)
+        loginButton.setOnClickListener { makeToast(this) }
+    }
 
-
+    private fun makeToast(mainActivity: MainActivity) {
+        Toast.makeText(baseContext, "Hello Toast!", Toast.LENGTH_SHORT).show();
     }
 
     class CustomAdapter(
@@ -74,11 +76,12 @@ class MainActivity : AppCompatActivity() {
 
             var tvImageName = view?.findViewById<TextView>(R.id.imageName)
             var imageView = view?.findViewById<ImageView>(R.id.imageView)
-            var toastButton = view?.findViewById<Button>(R.id.toastButton)
+            //var toastButton = view?.findViewById<Button>(R.id.toastButton)
 
             tvImageName?.text = itemModel[position].name;
-            toastButton?.setOnClickListener(){
-            }
+            /*toastButton?.setOnClickListener(){
+
+            }*/
             //imageView?.setImageResource(itemModel[position].image!!)
 
             return view!!;
