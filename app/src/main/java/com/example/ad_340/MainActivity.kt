@@ -13,7 +13,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var toast: Toast
+    lateinit var thread: Thread
     var modelList = ArrayList<Model>();
 
     var names = arrayOf(
@@ -38,13 +39,15 @@ class MainActivity : AppCompatActivity() {
 
         gridView.adapter = customAdapter;
 
-        var loginButton: Button = findViewById(R.id.loginButton)
-        loginButton.setOnClickListener { makeToast(this) }
+        var loginButton = findViewById(R.id.loginButton) as Button
+        loginButton.setOnClickListener {
+            Toast.makeText(applicationContext, "Login!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private fun makeToast(mainActivity: MainActivity) {
-        Toast.makeText(baseContext, "Hello Toast!", Toast.LENGTH_SHORT).show();
-    }
+    fun Context.toast(message: CharSequence) =
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
 
     class CustomAdapter(
         var itemModel: ArrayList<Model>,
@@ -74,9 +77,8 @@ class MainActivity : AppCompatActivity() {
 
             toastButton?.text = itemModel[position].name;
             toastButton?.setOnClickListener(){
-                //Toast.makeText(this, "Hello Toast!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Hello Toast!", Toast.LENGTH_SHORT).show();
             }
-            //imageView?.setImageResource(itemModel[position].image!!)
 
             return view!!;
 
