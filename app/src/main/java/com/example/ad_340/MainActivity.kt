@@ -73,9 +73,9 @@ class MainActivity : AppCompatActivity() {
             var toastButton = view?.findViewById<Button>(R.id.toastButton)
 
             toastButton?.text = itemModel[position].name;
-            /*toastButton?.setOnClickListener(){
-
-            }*/
+            toastButton?.setOnClickListener(){
+                //Toast.makeText(this, "Hello Toast!", Toast.LENGTH_SHORT).show();
+            }
             //imageView?.setImageResource(itemModel[position].image!!)
 
             return view!!;
