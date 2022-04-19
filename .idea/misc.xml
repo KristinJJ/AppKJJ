@@ -5,7 +5,10 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3703125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custom_view.xml" value="0.3039760581445062" />
+        <entry key="app/src/main/res/layout/row_item.xml" value="0.29243266353142366" />
+        <entry key="app/src/main/res/layout/row_items.xml" value="0.16075245831551946" />
       </map>
     </option>
   </component>
