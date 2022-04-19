@@ -6,7 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.BaseAdapter
+import android.widget.Button
+import android.widget.GridView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -20,20 +23,13 @@ class MainActivity : AppCompatActivity() {
         "Winter"
     );
 
-    var images = intArrayOf(
-        1,
-        2,
-        3,
-        4
-    );
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("MainActivity", "Hello World");
 
         for (i in names.indices){
-            modelList.add(Model(names[i], images[i]));
+            modelList.add(Model(names[i]));
         }
 
         var customAdapter = CustomAdapter(modelList, this);
@@ -74,11 +70,9 @@ class MainActivity : AppCompatActivity() {
                 view = layoutInflater.inflate(R.layout.row_items,viewGroup, false)
             }
 
-            var tvImageName = view?.findViewById<TextView>(R.id.imageName)
-            var imageView = view?.findViewById<ImageView>(R.id.imageView)
-            //var toastButton = view?.findViewById<Button>(R.id.toastButton)
+            var toastButton = view?.findViewById<Button>(R.id.toastButton)
 
-            tvImageName?.text = itemModel[position].name;
+            toastButton?.text = itemModel[position].name;
             /*toastButton?.setOnClickListener(){
 
             }*/

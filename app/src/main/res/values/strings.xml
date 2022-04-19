@@ -6,4 +6,5 @@
     <string name="enter_name">enter name</string>
     <string name="login">Login</string>
     <string name="todo">TODO</string>
+    <string name="toastbutton">toastButton</string>
 </resources>

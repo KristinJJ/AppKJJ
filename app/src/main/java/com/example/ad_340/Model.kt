@@ -2,11 +2,9 @@ package com.example.ad_340
 
 class Model {
     var name:String? = null
-    var image:Int? = null
 
-    constructor( name:String, image:Int){
+    constructor( name:String){
         this.name = name;
-        this.image = image;
     }
 
 }
