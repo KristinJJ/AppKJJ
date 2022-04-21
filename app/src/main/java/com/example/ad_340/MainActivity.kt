@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         "Winter"
     );
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,15 +41,13 @@ class MainActivity : AppCompatActivity() {
 
         gridView.adapter = customAdapter;
 
-        var loginButton = findViewById(R.id.loginButton) as Button
-        loginButton.setOnClickListener {
-            Toast.makeText(applicationContext, "Login!", Toast.LENGTH_SHORT).show();
-        }
+        var loginButton = findViewById<Button>(R.id.loginButton)
+        loginButton.setOnClickListener(View.OnClickListener {
+            Log.d("MainActivity","toast should follow");
+            val toast = Toast.makeText(applicationContext, "Login!", Toast.LENGTH_SHORT)
+            toast.show();
+        })
     }
-
-    fun Context.toast(message: CharSequence) =
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
 
     class CustomAdapter(
         var itemModel: ArrayList<Model>,
@@ -76,7 +76,10 @@ class MainActivity : AppCompatActivity() {
             var toastButton = view?.findViewById<Button>(R.id.toastButton)
 
             toastButton?.text = itemModel[position].name;
+
             toastButton?.setOnClickListener(){
+                var button = it as Button?
+                Log.d("MainActivity", button?.text as String)
                 Toast.makeText(context, "Hello Toast!", Toast.LENGTH_SHORT).show();
             }
 
