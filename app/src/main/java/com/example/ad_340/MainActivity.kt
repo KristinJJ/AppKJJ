@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             toastButton?.setOnClickListener(){
                 var button = it as Button?
                 Log.d("MainActivity", button?.text as String)
-                Toast.makeText(context, "Hello Toast!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, button?.text as String, Toast.LENGTH_SHORT).show();
             }
 
             return view!!;
