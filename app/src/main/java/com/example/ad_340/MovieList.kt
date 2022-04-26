@@ -6,7 +6,6 @@ import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MovieList : AppCompatActivity() {
@@ -18,9 +17,9 @@ class MovieList : AppCompatActivity() {
         val message = intent.getStringExtra(EXTRA_MESSAGE)
 
         //capture the layout's TextView and set the string as its text
-        val textView = findViewById<TextView>(R.id.textView2).apply {
-            text = message
-        }
+        //val textView = findViewById<TextView>(R.id.textView2).apply {
+          //  text = message
+        //}
 
         // use arrayadapter and define an array
         var arrayAdapter: ArrayAdapter<*>
@@ -50,9 +49,11 @@ class MovieList : AppCompatActivity() {
         )
 
         val movieHeaders = ArrayList<String>()
+        val movieDescriptions = ArrayList<String>()
         for (movie in movies) {
             Log.d("MovieListActivity", movie[0] + " " + movie[1]);
             movieHeaders.add(movie[0] + " " + movie[1])
+            movieDescriptions.add(movie[3])
         }
 
         // access the listView from xml file
@@ -64,6 +65,7 @@ class MovieList : AppCompatActivity() {
             val selectedItem = mListView.getItemAtPosition(position) as String
             val detailIntent = Intent(this, MovieDetails::class.java).apply {
                 putExtra(EXTRA_MESSAGE, selectedItem)
+                putExtra(EXTRA_TEXT, selectedItem)
             }
             startActivity(detailIntent)
         }
