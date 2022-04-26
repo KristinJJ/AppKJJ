@@ -2,6 +2,7 @@ package com.example.ad_340
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
@@ -55,10 +56,11 @@ class MovieList : AppCompatActivity() {
 
         // access the listView from xml file
         var mListView = findViewById<ListView>(R.id.movieList)
-
-        //for (movie in movies)
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, movieHeaders)
-
         mListView.adapter = arrayAdapter
+        mListView.onItemClickListener = AdapterView.OnItemClickListener{ adapterView, view, position, id ->
+            val selectedItem = mListView.getItemAtPosition(position) as String
+            textView.text = "The best movie is $selectedItem"
+        }
     }
 }
