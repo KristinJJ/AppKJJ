@@ -40,10 +40,12 @@ class MovieList : AppCompatActivity() {
         val movieHeaders = ArrayList<String>()
         val movieDescriptions = ArrayList<String>()
         val movieDirectors = ArrayList<String>()
+        val movieURLs = ArrayList<String>()
         for (movie in movies) {
             Log.d("MovieListActivity", movie[0] + " " + movie[1]);
             movieHeaders.add(movie[0] + " " + movie[1])
             movieDirectors.add(movie[2])
+            movieURLs.add(movie[3])
             movieDescriptions.add(movie[4])
         }
 
@@ -55,10 +57,12 @@ class MovieList : AppCompatActivity() {
         mListView.onItemClickListener = AdapterView.OnItemClickListener{ detailsAdapterView, view, position, id ->
             val selectedTitle = movieHeaders.get(position)
             val selectedDirector = movieDirectors.get(position)
+            val selectedURL = movieURLs.get(position)
             val selectedDescription = movieDescriptions.get(position)
             val extras = Bundle().apply{
                 putString("EXTRA_TITLE", selectedTitle)
                 putString("EXTRA_TEXT", selectedDirector)
+                putString("EXTRA_URL", selectedURL)
                 putString("EXTRA_MESSAGE", selectedDescription)
             }
             val detailIntent = Intent(this, MovieDetails::class.java).apply {
