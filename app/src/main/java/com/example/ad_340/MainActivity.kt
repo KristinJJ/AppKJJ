@@ -18,11 +18,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /** called when the user taps the Login button **/
+    /** called when the user taps the Send button **/
     fun sendMessage(view: View) {
         val editText = findViewById<EditText>(R.id.editTextTextPersonName)
         val message = editText.text.toString()
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
+            putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
+    }
+
+    /** called when the user taps the Movie List button **/
+    fun viewMovies(view: View) {
+        val message = "MovieList"
+        val intent = Intent(this, MovieList::class.java).apply {
             putExtra(EXTRA_MESSAGE, message)
         }
         startActivity(intent)

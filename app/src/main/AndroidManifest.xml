@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AD_340">
         <activity
+            android:name=".MovieList"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".DisplayMessageActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
