@@ -1,5 +1,6 @@
 package com.example.ad_340
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
@@ -58,9 +59,14 @@ class MovieList : AppCompatActivity() {
         var mListView = findViewById<ListView>(R.id.movieList)
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, movieHeaders)
         mListView.adapter = arrayAdapter
+
         mListView.onItemClickListener = AdapterView.OnItemClickListener{ adapterView, view, position, id ->
             val selectedItem = mListView.getItemAtPosition(position) as String
-            textView.text = "The best movie is $selectedItem"
+            val detailIntent = Intent(this, MovieDetails::class.java).apply {
+                putExtra(EXTRA_MESSAGE, selectedItem)
+            }
+            startActivity(detailIntent)
         }
+
     }
 }
