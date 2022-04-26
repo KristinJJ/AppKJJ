@@ -8,7 +8,6 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 const val EXTRA_MESSAGE = "com.example.ad_340.MESSAGE"
-const val EXTRA_TEXT = "com.example.ad_340.MESSAGE"
 
 class MainActivity : AppCompatActivity() {
 

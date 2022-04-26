@@ -9,16 +9,23 @@ class MovieDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_details)
 
+        val extras = getIntent().extras
+
         // get the Intent that started this activity and extract the string
-        val header = intent.getStringExtra(EXTRA_MESSAGE)
-        val description = intent.getStringExtra(EXTRA_TEXT)
+        val header = extras?.getString("EXTRA_TITLE")
+        val director = extras?.getString("EXTRA_TEXT")
+        val description = extras?.getString("EXTRA_MESSAGE")
 
         //capture the layout's TextView and set the string as its text
-        val headerText = findViewById<TextView>(R.id.movieHeaderTextView).apply {
+        val movieHeaderTextView = findViewById<TextView>(R.id.movieHeaderTextView).apply {
             text = header
         }
 
-        val descriptionText = findViewById<TextView>(R.id.movieDescriptionTextView).apply {
+        val movieDirectorTextView = findViewById<TextView>(R.id.movieDirectorTextView).apply {
+            text = director
+        }
+
+        val movieDescriptionTextView = findViewById<TextView>(R.id.movieDescriptionTextView).apply {
             text = description
         }
     }
