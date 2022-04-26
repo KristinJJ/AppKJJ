@@ -53,7 +53,7 @@ class MovieList : AppCompatActivity() {
         for (movie in movies) {
             Log.d("MovieListActivity", movie[0] + " " + movie[1]);
             movieHeaders.add(movie[0] + " " + movie[1])
-            movieDescriptions.add(movie[3])
+            movieDescriptions.add(movie[4])
         }
 
         // access the listView from xml file

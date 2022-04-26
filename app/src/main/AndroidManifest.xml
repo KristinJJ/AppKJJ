@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AD_340">
         <activity
+            android:label="Movie Details"
             android:name=".MovieDetails"
             android:parentActivityName=".MovieList" />
         <activity
+            android:label="Movie List"
             android:name=".MovieList"
             android:parentActivityName=".MainActivity" />
         <activity
