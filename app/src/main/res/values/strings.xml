@@ -7,4 +7,6 @@
     <string name="login">Login</string>
     <string name="todo">TODO</string>
     <string name="toastbutton">toastButton</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
 </resources>
