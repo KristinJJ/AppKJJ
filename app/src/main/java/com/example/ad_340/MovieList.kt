@@ -13,14 +13,6 @@ class MovieList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
 
-        // get the Intent that started this activity and extract the string
-        val message = intent.getStringExtra(EXTRA_MESSAGE)
-
-        //capture the layout's TextView and set the string as its text
-        //val textView = findViewById<TextView>(R.id.textView2).apply {
-          //  text = message
-        //}
-
         // use arrayadapter and define an array
         var arrayAdapter: ArrayAdapter<*>
 
