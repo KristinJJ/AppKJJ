@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/activity_movie_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_traffic_cam.xml" value="0.11381025248661056" />
         <entry key="app/src/main/res/layout/activity_traffic_cam_list.xml" value="0.11897475133894414" />
+        <entry key="app/src/main/res/layout/activity_traffic_cam_row_item.xml" value="0.15744535519125682" />
         <entry key="app/src/main/res/layout/custom_view.xml" value="0.3039760581445062" />
         <entry key="app/src/main/res/layout/row_item.xml" value="0.29243266353142366" />
         <entry key="app/src/main/res/layout/row_items.xml" value="0.16075245831551946" />

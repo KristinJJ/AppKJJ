@@ -1,6 +1,8 @@
 package com.example.ad_340
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
@@ -16,7 +18,7 @@ class TrafficCamList : AppCompatActivity() {
         setContentView(R.layout.activity_traffic_cam_list)
 
         val textView3 = findViewById<TextView>(R.id.textView3);
-        val cameraList: ArrayList<TrafficCam> = ArrayList()
+        val cameraList: MutableList<TrafficCam?> = ArrayList()
 
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
@@ -52,6 +54,11 @@ class TrafficCamList : AppCompatActivity() {
 
         // Add the request to the RequestQueue.
         queue.add(jsonObjectRequest)
+
+        // access the listView from xml file
+        var mListView = findViewById<ListView>(R.id.trafficCamList)
+        var arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, cameraList)
+        mListView.adapter = arrayAdapter
 
     }
 

@@ -8,4 +8,13 @@ class TrafficCam (val description: String, private val image: String, var type: 
     val typ = this.type
 
     val coo = this.coords
+
+    private val baseUrl: Map<String, String> = mapOf(
+        "sdot" to "http://www.seattle.gov/trafficcams/images/",
+        "wsdot" to "http://images.wsdot.wa.gov/nw/"
+    )
+
+    fun imageUrl() : String {
+        return baseUrl[this.type] + this.image
+    }
 }
