@@ -35,21 +35,22 @@ class TrafficCamList : AppCompatActivity() {
                     Log.d("TrafficCamListActivity", "something here");
                     try {
                         val features = response.getJSONArray("Features")
-
-                        for (cam in features.length() downTo 1) {
-                            val point = features.getJSONObject(cam)
+                        Log.d("TrafficCamListActivity", features.length().toString());
+                        for (i in 1 until features.length()) {
+                            val point = features.getJSONObject(i)
                             val pointCoords = point.getJSONArray("PointCoordinate")
 
                             // points may have more than one camera
                             val camera = point.getJSONArray("Cameras").getJSONObject(0)
                             Log.d("TrafficCamListActivity",camera.getString("Description"))
+                            Log.d("TrafficCamListActivity",camera.getString("ImageUrl"))
+                            Log.d("TrafficCamListActivity",camera.getString("Type"))
                             val c = TrafficCam(
                                 camera.getString("Description"),
                                 camera.getString("ImageUrl"),
                                 camera.getString("Type"),
                                 doubleArrayOf(pointCoords.getDouble(0), pointCoords.getDouble(1))
                             )
-                            Log.d("TrafficCamListActivity", c.description);
                             cameraListArray.add(c)
                         }
                         // return results to caller
