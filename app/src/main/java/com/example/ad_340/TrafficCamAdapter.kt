@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.squareup.picasso.Picasso
 
 class TrafficCamAdapter(private val context: Context, private val dataSource: ArrayList<TrafficCam>) : BaseAdapter() {
     private val inflater: LayoutInflater =
@@ -29,10 +30,15 @@ class TrafficCamAdapter(private val context: Context, private val dataSource: Ar
         val rowView = inflater.inflate(R.layout.activity_traffic_cam_row_item, parent, false)
 
         // Get description element
-        val description = rowView.findViewById(R.id.traffic_cam_description) as TextView
+        val descriptionTextView = rowView.findViewById(R.id.traffic_cam_description) as TextView
 
         // Get image element
-        val image = rowView.findViewById(R.id.traffic_cam_image) as ImageView
+        val imageImageView = rowView.findViewById(R.id.traffic_cam_image) as ImageView
+
+        val trafficCam = getItem(position) as TrafficCam
+
+        descriptionTextView.text = trafficCam.description
+        Picasso.with(context).load(trafficCam.image).placeholder(R.mipmap.ic_launcher).into(imageImageView)
 
         return rowView
     }
