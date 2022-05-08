@@ -7,6 +7,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONException
 import org.json.JSONObject
 
 class TrafficCamList : AppCompatActivity() {
@@ -20,13 +21,17 @@ class TrafficCamList : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this)
         val url = "https://web6.seattle.gov/Travelers/api/Map/Data?zoomId=13&type=2"
 
-        // Request a string response from the provided URL.
+        // Request a JSON response from the provided URL.
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener<JSONObject> { response ->
-                // Display the first 500 characters of the response string.
-                val value = response.getJSONArray("Features")
-                textView3.text = "Response is: ${value.length()}"
+                try {
+                    val value = response.getJSONArray("Features")
+
+                    textView3.text = "Response is: ${value.length()}"
+                } catch (e: JSONException) {
+
+                }
             },
             Response.ErrorListener { textView3.text = "That didn't work!" })
 
