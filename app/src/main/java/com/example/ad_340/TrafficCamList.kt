@@ -16,6 +16,7 @@ class TrafficCamList : AppCompatActivity() {
         setContentView(R.layout.activity_traffic_cam_list)
 
         val textView3 = findViewById<TextView>(R.id.textView3);
+        val cameraList: ArrayList<TrafficCam> = ArrayList()
 
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
@@ -26,9 +27,23 @@ class TrafficCamList : AppCompatActivity() {
             Request.Method.GET, url, null,
             Response.Listener<JSONObject> { response ->
                 try {
-                    val value = response.getJSONArray("Features")
+                    val features = response.getJSONArray("Features")
 
-                    textView3.text = "Response is: ${value.length()}"
+                    textView3.text = "Response is: ${features.length()}"
+                    for (cam in features.length() downTo 1) {
+                        val point = features.getJSONObject(cam)
+                        val pointCoords = point.getJSONArray("PointCoordinate")
+
+                        // points may have more than one camera
+                        val camera = point.getJSONArray("Cameras").getJSONObject(0)
+                        val c = TrafficCam(
+                            camera.getString("Description"),
+                            camera.getString("ImageUrl"),
+                            camera.getString("Type"),
+                            doubleArrayOf(pointCoords.getDouble(0), pointCoords.getDouble(1))
+                        )
+                        cameraList.add(c)
+                    }
                 } catch (e: JSONException) {
 
                 }
