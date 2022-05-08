@@ -37,4 +37,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    /** called when the user taps the Movie List button **/
+    fun viewTrafficCams(view: View) {
+        val message = "Traffic Cam List"
+        val intent = Intent(this, MovieList::class.java).apply {
+            putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
+    }
 }
