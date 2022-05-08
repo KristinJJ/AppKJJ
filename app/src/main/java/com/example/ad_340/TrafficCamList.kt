@@ -1,9 +1,8 @@
 package com.example.ad_340
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.util.Log
 import android.widget.ListView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
@@ -13,53 +12,62 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class TrafficCamList : AppCompatActivity() {
+    var mListView: ListView? = null
+    var listAdapter: TrafficCamAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_traffic_cam_list)
 
-        val textView3 = findViewById<TextView>(R.id.textView3);
-        val cameraList: MutableList<TrafficCam?> = ArrayList()
+        mListView = findViewById<ListView>(R.id.trafficCamList)
 
-        // Instantiate the RequestQueue.
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://web6.seattle.gov/Travelers/api/Map/Data?zoomId=13&type=2"
+        val cameraListArray: ArrayList<TrafficCam> = ArrayList()
 
-        // Request a JSON response from the provided URL.
-        val jsonObjectRequest = JsonObjectRequest(
-            Request.Method.GET, url, null,
-            Response.Listener<JSONObject> { response ->
-                try {
-                    val features = response.getJSONArray("Features")
 
-                    textView3.text = "Response is: ${features.length()}"
-                    for (cam in features.length() downTo 1) {
-                        val point = features.getJSONObject(cam)
-                        val pointCoords = point.getJSONArray("PointCoordinate")
+            // Instantiate the RequestQueue.
+            val queue = Volley.newRequestQueue(this)
+            val url = "https://web6.seattle.gov/Travelers/api/Map/Data?zoomId=13&type=2"
 
-                        // points may have more than one camera
-                        val camera = point.getJSONArray("Cameras").getJSONObject(0)
-                        val c = TrafficCam(
-                            camera.getString("Description"),
-                            camera.getString("ImageUrl"),
-                            camera.getString("Type"),
-                            doubleArrayOf(pointCoords.getDouble(0), pointCoords.getDouble(1))
-                        )
-                        cameraList.add(c)
+            // Request a JSON response from the provided URL.
+            val jsonObjectRequest = JsonObjectRequest(
+                Request.Method.GET, url, null,
+                Response.Listener<JSONObject> { response ->
+                    Log.d("TrafficCamListActivity", "something here");
+                    try {
+                        val features = response.getJSONArray("Features")
+
+                        for (cam in features.length() downTo 1) {
+                            val point = features.getJSONObject(cam)
+                            val pointCoords = point.getJSONArray("PointCoordinate")
+
+                            // points may have more than one camera
+                            val camera = point.getJSONArray("Cameras").getJSONObject(0)
+                            Log.d("TrafficCamListActivity",camera.getString("Description"))
+                            val c = TrafficCam(
+                                camera.getString("Description"),
+                                camera.getString("ImageUrl"),
+                                camera.getString("Type"),
+                                doubleArrayOf(pointCoords.getDouble(0), pointCoords.getDouble(1))
+                            )
+                            Log.d("TrafficCamListActivity", c.description);
+                            cameraListArray.add(c)
+                        }
+                        // return results to caller
+                        //updateResults(cameraListArray)
+                    } catch (e: JSONException) {
+                        Log.d("TrafficCamListActivity", "that didn't work")
                     }
-                } catch (e: JSONException) {
+                },
+                Response.ErrorListener { error -> Log.d("JSON", "Error: " + error.message) })
 
-                }
-            },
-            Response.ErrorListener { textView3.text = "That didn't work!" })
+            // Add the request to the RequestQueue.
+            queue.add(jsonObjectRequest)
 
-        // Add the request to the RequestQueue.
-        queue.add(jsonObjectRequest)
+            // access the listView from xml file
+            val arrayAdapter = TrafficCamAdapter(this, cameraListArray)
+            mListView?.setAdapter(arrayAdapter)
 
-        // access the listView from xml file
-        var mListView = findViewById<ListView>(R.id.trafficCamList)
-        var arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, cameraList)
-        mListView.adapter = arrayAdapter
+        }
 
-    }
 
 }

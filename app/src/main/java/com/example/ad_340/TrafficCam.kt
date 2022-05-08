@@ -1,6 +1,6 @@
 package com.example.ad_340
 
-class TrafficCam (val description: String, private val image: String, var type: String, var coords: DoubleArray ) {
+class TrafficCam (val description: String, val image: String, var type: String, var coords: DoubleArray ) {
     val des = this.description;
 
     val ima = this.image
