@@ -1,4 +1,4 @@
-package com.example.ad_340;
+package com.example.appkjj;
 
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;

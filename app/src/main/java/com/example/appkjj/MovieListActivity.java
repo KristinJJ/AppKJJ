@@ -1,4 +1,4 @@
-package com.example.ad_340;
+package com.example.appkjj;
 
 import android.os.Bundle;
 
@@ -38,7 +38,7 @@ public class MovieListActivity extends AppCompatActivity {
         };
 
         RecyclerView movieListRecyclerView = findViewById(R.id.movieListRecyclerView);
-        com.example.ad_340.CustomMovieListAdapter movieListAdapter = new com.example.ad_340.CustomMovieListAdapter(movies);
+        com.example.appkjj.CustomMovieListAdapter movieListAdapter = new com.example.appkjj.CustomMovieListAdapter(movies);
         movieListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         movieListRecyclerView.setAdapter(movieListAdapter);
     }

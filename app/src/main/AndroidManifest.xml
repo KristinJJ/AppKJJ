@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ad_340">
+    package="com.example.appkjj">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,22 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AD_340">
         <activity
-            android:name=".CameraListActivity"
+            android:name="com.example.appkjj.CameraListActivity"
             android:exported="true"
             android:label="List of traffic cameras"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.appkjj.MainActivity" />
         <activity
-            android:name=".MovieListActivity"
+            android:name="com.example.appkjj.MovieListActivity"
             android:exported="true"
             android:label="List of Zombie movies"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.appkjj.MainActivity" />
         <activity
-            android:name=".MovieItemActivity"
+            android:name="com.example.appkjj.MovieItemActivity"
             android:exported="true"
             android:label="Movie details"
-            android:parentActivityName=".MovieListActivity" />
+            android:parentActivityName="com.example.appkjj.MovieListActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.appkjj.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

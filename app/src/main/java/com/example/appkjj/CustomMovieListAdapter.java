@@ -1,4 +1,4 @@
-package com.example.ad_340;
+package com.example.appkjj;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
