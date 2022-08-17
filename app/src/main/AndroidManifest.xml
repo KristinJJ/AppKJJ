@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ad_340">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,20 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AD_340">
         <activity
-            android:label="Traffic Cam List"
-            android:name=".TrafficCamList"
+            android:name=".CameraListActivity"
+            android:exported="true"
+            android:label="List of traffic cameras"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:label="Movie Details"
-            android:name=".MovieDetails"
-            android:parentActivityName=".MovieList" />
-        <activity
-            android:label="Movie List"
-            android:name=".MovieList"
+            android:name=".MovieListActivity"
+            android:exported="true"
+            android:label="List of Zombie movies"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".DisplayMessageActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".MovieItemActivity"
+            android:exported="true"
+            android:label="Movie details"
+            android:parentActivityName=".MovieListActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
