@@ -75,7 +75,7 @@ public class CameraListActivity extends AppCompatActivity {
             // Add the request to the RequestQueue.
             queue.add(objectRequest);
         } else {
-            Toast.makeText(CameraListActivity.this, "You currently DO NOT have ANY internet connection!", Toast.LENGTH_LONG).show();
+            Toast.makeText(CameraListActivity.this, "No internet connection", Toast.LENGTH_LONG).show();
         }
     }
 
