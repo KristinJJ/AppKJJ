@@ -7,6 +7,9 @@ import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Create buttons to add to grid
         ArrayList<Button> buttonList = new ArrayList<>();
-        String[] buttonNames = {"Movies", "Cameras", "Spring", "Summer", "Fall", "Winter" };
+        String[] buttonNames = {"Movies", "Cameras", "Map", "Recipes", "Groceries", "Songs" };
         for(String buttonName : buttonNames) {
             Button newBtn = new Button(this);
             newBtn.setText(buttonName);
