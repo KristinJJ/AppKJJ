@@ -51,17 +51,18 @@ public class CameraListActivity extends AppCompatActivity {
 
                             for (int j = 0; j < camerasArray.length(); j++) {
                                 JSONObject camera = camerasArray.getJSONObject(j);
+                                Camera trafficCam = new Camera();
                                 String cameraDescription = camera.getString("Description");
                                 String cameraImageURL = camera.getString("ImageUrl");
                                 String cameraType = camera.getString("Type");
 
                                 if (cameraType.equals("sdot"))
-                                    cameraImageURL = "https://www.seattle.gov/trafficcams/images/" + cameraImageURL;
+                                    trafficCam.setImageURL("https://www.seattle.gov/trafficcams/images/" + cameraImageURL);
                                 else {
-                                    cameraImageURL = "https://images.wsdot.wa.gov/nw/" + cameraImageURL;
+                                    trafficCam.setImageURL("https://images.wsdot.wa.gov/nw/" + cameraImageURL);
                                 }
 
-                                cameraList.add(new Camera(cameraDescription, cameraImageURL));
+                                cameraList.add(trafficCam);
                             }
                         }
 
