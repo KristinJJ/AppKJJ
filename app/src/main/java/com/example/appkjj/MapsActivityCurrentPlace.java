@@ -262,6 +262,10 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                         new LatLng(lastKnownLocation.getLatitude(),
                                                 lastKnownLocation.getLongitude()), 12));
+                                map.addMarker(new MarkerOptions()
+                                        .position(new LatLng(lastKnownLocation.getLatitude(),lastKnownLocation.getLongitude()))
+                                        .title("Current position")
+                                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
                             }
                         } else {
                             Log.d(TAG, "Current location is null. Using defaults.");
