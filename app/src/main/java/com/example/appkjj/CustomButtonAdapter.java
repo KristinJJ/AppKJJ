@@ -24,7 +24,7 @@ public class CustomButtonAdapter extends ArrayAdapter<Button> {
 
         buttonNameIntentMap.put("Movies", MovieListActivity.class);
         buttonNameIntentMap.put("Cameras", CameraListActivity.class);
-        buttonNameIntentMap.put("Map", MapsMarkerActivity.class);
+        buttonNameIntentMap.put("Map", MapsActivityCurrentPlace.class);
     }
 
     @Override
