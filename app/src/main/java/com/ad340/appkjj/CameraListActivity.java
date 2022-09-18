@@ -53,6 +53,7 @@ public class CameraListActivity extends AppCompatActivity {
                                 JSONObject camera = camerasArray.getJSONObject(j);
                                 Camera trafficCam = new Camera();
                                 String cameraDescription = camera.getString("Description");
+                                trafficCam.setDescription(cameraDescription);
                                 String cameraImageURL = camera.getString("ImageUrl");
                                 String cameraType = camera.getString("Type");
 
