@@ -1,4 +1,4 @@
-package com.example.appkjj;
+package com.ad340.appkjj;
 
 public class Camera {
     private String description;

@@ -1,4 +1,4 @@
-package com.example.appkjj;
+package com.ad340.appkjj;
 
 import android.view.LayoutInflater;
 import android.view.View;

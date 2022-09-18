@@ -1,4 +1,4 @@
-package com.example.appkjj;
+package com.ad340.appkjj;
 
 import android.content.Context;
 import android.content.Intent;

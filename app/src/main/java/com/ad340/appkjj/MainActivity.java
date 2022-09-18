@@ -1,4 +1,4 @@
-package com.example.appkjj;
+package com.ad340.appkjj;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -6,9 +6,6 @@ import android.widget.Button;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
 

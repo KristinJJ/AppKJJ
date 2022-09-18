@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.appkjj">
+    package="com.ad340.appkjj">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -25,27 +25,27 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
         <activity
-            android:name="com.example.appkjj.CameraListActivity"
+            android:name="com.ad340.appkjj.CameraListActivity"
             android:exported="true"
             android:label="List of traffic cameras"
-            android:parentActivityName="com.example.appkjj.MainActivity" />
+            android:parentActivityName="com.ad340.appkjj.MainActivity" />
         <activity
-            android:name="com.example.appkjj.MovieListActivity"
+            android:name="com.ad340.appkjj.MovieListActivity"
             android:exported="true"
             android:label="List of Zombie movies"
-            android:parentActivityName="com.example.appkjj.MainActivity" />
+            android:parentActivityName="com.ad340.appkjj.MainActivity" />
         <activity
-            android:name="com.example.appkjj.MovieItemActivity"
+            android:name="com.ad340.appkjj.MovieItemActivity"
             android:exported="true"
             android:label="Movie details"
-            android:parentActivityName="com.example.appkjj.MovieListActivity" />
+            android:parentActivityName="com.ad340.appkjj.MovieListActivity" />
         <activity
-            android:name="com.example.appkjj.MapsActivityCurrentPlace"
+            android:name="com.ad340.appkjj.MapsActivityCurrentPlace"
             android:exported="true"
             android:label="Map with Marker"
-            android:parentActivityName="com.example.appkjj.MainActivity" />
+            android:parentActivityName="com.ad340.appkjj.MainActivity" />
         <activity
-            android:name="com.example.appkjj.MainActivity"
+            android:name="com.ad340.appkjj.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

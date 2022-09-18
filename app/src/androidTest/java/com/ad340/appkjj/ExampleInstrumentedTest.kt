@@ -1,4 +1,4 @@
-package com.example.appkjj
+package com.ad340.appkjj
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

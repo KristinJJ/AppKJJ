@@ -1,4 +1,4 @@
-package com.example.appkjj;
+package com.ad340.appkjj;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -31,7 +31,7 @@ public class CameraListActivity extends AppCompatActivity {
         ArrayList<Camera> cameraList = new ArrayList<>();
 
         RecyclerView cameraListRecyclerView = findViewById(R.id.cameraListRecyclerView);
-        com.example.appkjj.CustomCameraListAdapter cameraListAdapter = new com.example.appkjj.CustomCameraListAdapter(cameraList);
+        com.ad340.appkjj.CustomCameraListAdapter cameraListAdapter = new com.ad340.appkjj.CustomCameraListAdapter(cameraList);
         cameraListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         cameraListRecyclerView.setAdapter(cameraListAdapter);
 
