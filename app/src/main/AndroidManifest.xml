@@ -25,6 +25,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
         <activity
+            android:name="com.ad340.appkjj.FirebaseActivity"
+            android:exported="true"
+            android:parentActivityName="com.ad340.appkjj.FirebaseActivity">
+        </activity>
+        <activity
             android:name="com.ad340.appkjj.CameraListActivity"
             android:exported="true"
             android:label="List of traffic cameras"

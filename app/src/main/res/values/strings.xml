@@ -2,8 +2,10 @@
     <string name="app_name">AppKJJ</string>
     <string name="userInput">Enter name</string>
     <string name="userInputHint">Please enter your login name</string>
-    <string name="loginBtn">Login</string>
-    <string name="defaultBtnText">Button</string>
+    <string name="username_label">Enter your user name</string>
+    <string name="email_label">Enter your email</string>
+    <string name="password_label">Enter your password</string>
+    <string name="login">Login</string>
     <string name="movieName">Movie Name</string>
     <string name="movieYear">Release Year</string>
     <string name="movieDirector">Release Director</string>
@@ -15,4 +17,5 @@
     <string name="default_info_snippet">No places found, because location permission is disabled.</string>
     <string name="option_get_place">Get place</string>
     <string name="pick_place">Choose a place</string>
+    <string name="defaultBtnText">Button</string>
 </resources>
